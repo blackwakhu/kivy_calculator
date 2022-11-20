@@ -1,0 +1,110 @@
+CalculatorDisplay:
+
+<CustBoxLayout@BoxLayout>:
+	spacing: 10
+
+<CustButton@Button>:
+	font_size: 32
+
+<CalculatorDisplay>:
+	display: text_entry
+	rows: 6
+	padding: 10
+	spacing: 10
+	
+	BoxLayout:
+		height: "40dp"
+		TextInput:
+			id: text_entry
+			multline: False
+			font_size: 32
+			
+	CustBoxLayout:
+		CustButton:
+			text: "7"
+			size_hint_x: 1
+			on_press: text_entry.text += self.text
+			
+		CustButton:
+			text: "8"
+			on_press: text_entry.text += self.text
+			size_hint_x: 1
+			
+		CustButton:
+			text: "9"
+			on_press: text_entry.text += self.text
+			size_hint_x:1
+			
+		CustButton:
+			text: "+"
+			size_hint_x:1
+			on_press: text_entry.text += self.text
+						
+	CustBoxLayout:
+		CustButton:
+			text: "4"
+			on_press: text_entry.text += self.text
+			size_hint_x: 1
+			
+		CustButton:
+			text: "5"
+			on_press: text_entry.text += self.text
+			size_hint_x: 1
+			
+		CustButton:
+			text: "6"
+			on_press: text_entry.text += self.text
+			size_hint_x: 1
+			
+		CustButton:
+			text: "-"
+			size_hint_x: 1
+			on_press: text_entry.text += self.text
+				
+	CustBoxLayout:
+		CustButton:
+			text: "3"
+			on_press: text_entry.text += self.text
+			size_hint_x: 1
+			
+		CustButton:
+			text: "2"
+			on_press: text_entry.text += self.text
+			size_hint_x: 1
+			
+		CustButton:
+			text: "1"
+			on_press: text_entry.text += self.text
+			size_hint_x: 1
+			
+		CustButton:
+			text: "/"
+			on_press: text_entry.text += self.text
+			size_hint_x:1
+	
+	CustBoxLayout:
+		CustButton:
+			text: "clr"
+			size_hint_x:1
+			on_press: text_entry.text = ""
+			
+		CustButton:
+			text: "."
+			on_press: text_entry.text += self.text
+			size_hint_x:1
+			
+		CustButton:
+			text: "0"
+			on_press: text_entry.text += self.text
+			size_hint_x:1
+			
+		CustButton:
+			text: "*"
+			on_press: text_entry.text += self.text
+			size_hint_x: 1
+
+	BoxLayout:
+		Button:
+			text: "="
+			on_press: root.calculate(text_entry.text)
+			font_size: 40
